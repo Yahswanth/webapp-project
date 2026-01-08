@@ -9,12 +9,6 @@ pipeline {
 
     stages {
 
-        stage('Checkout Code') {
-            steps {
-                git url: 'https://github.com/Yahswanth/webapp-project.git', branch: '*/master'
-            }
-        }
-
         stage('Build & Unit Test') {
             steps {
                 sh 'mvn clean package'
