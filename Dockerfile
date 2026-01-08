@@ -1,9 +1,15 @@
-FROM openjdk:17-jdk-slim
+# Base image
+FROM openjdk:17-jdk
 
+# Set working directory
 WORKDIR /app
 
-COPY target/webapp.jar app.jar
+# Copy WAR file
+COPY target/NETFLIX.war /app/webapp.war
 
+# Expose port for Tomcat / Spring Boot
 EXPOSE 8080
 
-ENTRYPOINT ["java","-jar","app.jar"]
+# Run WAR
+CMD ["java", "-jar", "/app/webapp.war"]
+
