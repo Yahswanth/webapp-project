@@ -9,7 +9,13 @@
 	<url>http://maven.apache.org</url>
 	
 	<properties>
-		<docker.image.prefix>kammana</docker.image.prefix>
+    <docker.image.prefix>kammana</docker.image.prefix>
+
+    <!-- Java version fix -->
+    <maven.compiler.source>8</maven.compiler.source>
+    <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
 	</properties>	
 	<dependencies>
 		<dependency>
