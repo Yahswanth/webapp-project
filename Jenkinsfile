@@ -9,6 +9,23 @@ pipeline {
 
     stages {
 
+        stage('Checkout Code') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Verify Tools') {
+            steps {
+                sh '''
+                java -version
+                mvn -version
+                docker --version
+                aws --version
+                '''
+            }
+        }
+
         stage('Build & Unit Test') {
             steps {
                 sh 'mvn clean package'
